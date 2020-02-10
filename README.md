@@ -17,7 +17,7 @@ WSManStackVersion          3.0
 ```
 
 ```powershell
-$FindCommandsHash = Get-Command -Verb Find | Select-Object -Property Name,Version,CommandType,Source
+$FindCommands = Get-Command -Verb Find | Select-Object -Property Name,Version,CommandType,Source
 ```
 
 ```
@@ -33,7 +33,7 @@ Find-PackageProvider 1.3.2        Cmdlet PackageManagement
 ```
 
 ```powershell
-$FindCommandsHash.GetType()
+$FindCommands.GetType()
 ```
 
 
@@ -46,7 +46,7 @@ True     True     Object[]   System.Array
 
 
 ```powershell
-$FindCommandsHash[0].GetType()
+$FindCommands[0].GetType()
 ```
 
 
@@ -62,7 +62,7 @@ True     False    PSCustomObject  System.Object
 
 
 ```powershell
-$FindCommandsHash | Group-Object -Property Name
+$FindCommands | Group-Object -Property Name
 ```
 
 
